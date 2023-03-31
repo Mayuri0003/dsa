@@ -1,0 +1,34 @@
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+//nCr using iteration
+int fact(int n){
+    if(n==0){
+        return 1;
+    }
+    return fact(n-1)*n;
+};
+
+int nCr(int n,int r){
+    int t1,t2,t3;
+    t1=fact(n);
+    t2=fact(r);
+    t3=fact(n-r);
+    return t1/(t2*t3);
+};
+
+//nCr using recursive function
+
+int nCrrec(int n, int r){
+    if(n==r or r==0){
+        return 1;
+    }
+    else{
+        return nCrrec(n - 1, r - 1) + nCrrec(n - 1, r );
+    }
+};
+
+int main(){
+    cout<<nCrrec(5,2);
+    return 0;
+};

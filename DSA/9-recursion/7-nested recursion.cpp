@@ -1,0 +1,18 @@
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+//in nested recursion,recursive fncn will pass parameter as recursive call
+
+int fun(int n){
+    if(n>100){
+        return n-10;
+    }
+    else{
+        return fun(fun(n+11));
+    }
+};
+
+int main(){
+    cout<<fun(95);
+    return 0;
+};
